@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kartik">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CuddleCritter</title>
+	<link rel="icon" href="./assets/favicon.ico" type="image/x-icon"/>
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Poppins:400,500i,900i|VT323&display=swap"
+		rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<style>
+		.imageOne {
+			background-image: url("assets/img/dog1.jpg")
+		}
+
+		.imageTwo {
+			background-image: url("assets/img/dog2.jpg");
+		}
+
+		.imageThree {
+			background-image: url("assets/img/dog7.jpg");
+		}
+
+		.imageFour {
+			background-image: url("assets/img/dog10.jpg");
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar" id="nav">
+			<a class="item siteName" href="index.html">CuddleCritter</a>
+			<a class="item" href="about.html">About</a>
+			<a class="item" href="animalList.html">Find a Dog</a>
+			<a class="item" href="Policy.html">Policy</a>
+			<a class="item" href="Success.html">Stories</a>
+			<a class="item" id="active" href="Resources.html">Resources</a>
+			<a class="item icon" href="javascript:void(0);" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</nav>
+	</header>
+
+	<section class="banner imageOne" src="assets/img/Image7.jpg"></section>
+
+	<section class="container white">
+		<div class="wrapper">
+			<h1>Resources</h1>
+			<p class="description">We know that taking care of a pet can be a lot of work. Here are some resources that
+				we think will be useful!</p>
+		</div>
+	</section>
+
+	<section class="banner imageTwo"></section>
+
+
+	<section class="container white">
+		<div class="wrapper">
+			<h3>Veterinary Servies</h3>
+			<p class="description">The key to a long and happy life with your new family member is health! Check out
+				this veterinary service that will keep your pet happy and healthy!</p>
+			<br><a href="https://wvsindia.org" class="button">Veterinary
+				Services</a>
+		</div>
+
+	</section>
+
+	<section class="banner imageThree"></section>
+
+	<section class="container white">
+		<div class="wrapper">
+			<h3>Pet Food</h3>
+			<p class="description">A healthy diet is just as important as excercise and a trip to the vet! Here are some
+				recomendations for healthy options at affordable prices!</p>
+			<br><a href="https://headsupfortails.com" class="button">Pet Food</a>
+		</div>
+	</section>
+	<section class="banner imageFour"></section>
+
+	<section class="container white">
+		<div class="wrapper">
+			<h3>Grooming Services</h3>
+			<p class="description">Everyone loves a pet that is well groomed! Keep your pet looking sharp with this
+				grooming service!</p>
+			<br><a href="https://thepetnest.com" class="button">Grooming Services</a>
+		</div>
+	</section>
+
+	<script>
+		function myFunction() {
+			var x = document.getElementById("nav");
+			if (x.className === "navbar") {
+				x.className += " responsive";
+			} else {
+				x.className = "navbar";
+			}
+		}
+	</script>
+
+	<footer>
+		<div class="shortcut">
+			<p><a class="item" href="index.html">Home</a></p>
+			<p><a class="item" href="about.html">About</a></p>
+			<p><a class="item" href="Policy.html">Policy</a></p>
+			<p><a class="item" href="Success.html">Stories</a></p>
+			<p><a class="item" href="animalList.html">List of Dogs</a></p>
+			<p><a class="item" href="form_page.php">Adoption Form</a></p>
+			<p><a class="item" href="Resources.html">Resources</a></p>
+		</div>
+	</footer>
+
+
+</body>
+
+</html>

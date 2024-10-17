@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+	.row1{
+		padding: 5% 10%;
+	}
+	.card {
+		margin-bottom: 2em;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		background-color: #fff;
+	}
+	.card p{
+		font-size: 1em;
+	}
+	.cardSmaller {
+		height: auto;
+		margin-top: 20px;
+		margin-left: 10px;
+		margin-right: 10px;
+		float: left;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		width: 20%;
+		max-height: 300px;
+		background-color: #fff;
+	}
+	.card:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+
+	.cardContainer{
+		padding: 2px 16px;
+	}
+	.back{
+		background-color: #fff;
+	}
+	.hideme{
+		opacity:0;
+	}
+	.adoptMe{
+		display: inline-block;
+		position: absolute;
+		float: right;
+		bottom: 10px;
+		right: 10px;
+	}
+	.animalBanner{
+		background-image: url("assets/img/adoptImage.jpg");
+	}
+	.front{
+		background-color: #fff !important;
+	}
+	.back{
+		text-align: left !important;
+		text-align: left !important;
+		background-color: #fff !important;
+	}
+	@media screen and (min-width: 20em) {
+		.row1 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.card {
+			max-height: 32em;
+			flex: 0 1 calc(100% - 3em);
+		}
+	}
+	@media screen and (min-width: 40em) {
+		.row1 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.card {
+			max-height: 40em;
+			flex: 0 1 calc(50% - 1em);
+		}
+	}
+	@media screen and (min-width: 60em) {
+		.card {
+			max-height: 50em;
+			flex: 0 1 calc(30% - 1em);
+		}
+	}
+
+	

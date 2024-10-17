@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Kartik">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adopt an Animal</title>
+
+<link rel="icon" href="./assets/favicon.ico" type="image/x-icon"/>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="page.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="jquery-3.4.1.min.js"></script>
+<script src="jquery.flip.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Poppins:400,500i,900i|VT323&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+    .row1 {
+        padding: 5% 10%;
+    }
+
+    .card {
+        margin-bottom: 2em;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        background-color: #fff;
+    }
+
+    .card p {
+        font-size: 1em;
+    }
+
+    .cardSmaller {
+        height: auto;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        float: left;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 20%;
+        max-height: 300px;
+        background-color: #fff;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .cardContainer {
+        padding: 2px 16px;
+    }
+
+    .back {
+        background-color: #fff;
+    }
+
+    .hideme {
+        opacity: 0;
+    }
+
+    .adoptMe {
+        display: inline-block;
+        position: absolute;
+        float: right;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .animalBanner {
+        background-image: url("assets/img/adoptImage.jpg");
+    }
+
+    .front {
+        background-color: #fff !important;
+    }
+
+    .back {
+        text-align: left !important;
+        background-color: #fff !important;
+    }
+
+	#searchInput{
+		height: 25px;
+		width: 200px;
+	}
+
+    .drop{
+        text-align: left;
+        align-items: left;
+    }
+	
+	.search-container{
+		margin-left: 85%; 	
+
+	}
+    @media screen and (min-width: 20em) {
+        .row1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            max-height: 32em;
+            flex: 0 1 calc(100% - 3em);
+        }
+    }
+
+    @media screen and (min-width: 40em) {
+        .row1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            max-height: 40em;
+            flex: 0 1 calc(50% - 1em);
+        }
+    }
+
+    @media screen and (min-width: 60em) {
+        .card {
+            max-height: 50em;
+            flex: 0 1 calc(30% - 1em);
+        }
+    }
+	
+</style>
+</head>
+
+<body>
+<header>
+    <nav class="navbar" id="nav">
+        <a class="item siteName" href="index.html">CuddleCritter</a>
+        <a class="item" href="about.html">About</a>
+        <a class="item" id="active" href="animalList.html">Find a pet</a>
+        <a class="item" href="Policy.html">Policy</a>
+        <a class="item" href="Success.html">Stories</a>
+        <a class="item" href="Resources.html">Resources</a>
+        <a class="item icon" href="javascript:void(0);" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+</header>
+
+<section class="banner animalBanner"></section>
+
+<section class="container white">
+    <div class="wrapper">
+        <h2>Find a pet</h2>
+        <p class="description">Find a pal for life!</p>
+        <br><a class="button">Scroll Down</a>
+    </div>
+
+	
+</section>
+
+<div class="contain">
+    <div class="drop">
+    <label for="itemFilter">Select category</label>
+    <select id="itemFilter" onchange="filterByItemID()">
+        <option value="all">All</option>
+        <option value="dog">Dogs</option>
+        <option value="cat">Cats</option>
+        <option value="bird">Birds</option>
+    </select>
+</div>
+<div class="search-container" id="searchbox">
+    <input type="text" id="searchInput" onkeyup="searchTabs()" placeholder="Search for pets..." ">
+    
+</div>
+
+
+<div class="row1" >
+    
+
+        <div class="card " id="1">
+            <div class="gold">
+
+                <div class="front" id="front1">
+                    <img src="assets/img/goldenRetriever.jpeg" alt="Avatar" style="width:100%">
+                    <div class="cardContainer">
+
+                    <div itemid="dog"> 
+                        <h2>Lucy</h2>
+
+                        <h3>Golden Retriever</h3>
+                    </div>
+                    </div>
+                </div>
+                <div class="back" id="back1">
+                    <div class="cardContainer">
+                        <!--						The tagline for reach -->
+                        <p>Age: 3 years</p>
+                        <p>Likes: Chew toys, grass, and frisbees</p>
+                        <p>Dislikes: Squirrels</p>
+                        <p>Favorite Brand of pet Food: Blue Buffalo</p>
+                        <p>Lucy loves wide-open spaces and being active. She enjoys running around and playing frisbee. Although she loves to be outside, Lucy also can’t stand being around squirrels and will chase them until they are out of sight. After a long day of running around, Lucy enjoys cuddling with her favorite stick. </p>
+                        
+                        
+                        <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="2">
+            <div class="front" id="front2">
+                <img src="assets/img/beagle.jpg" alt="Avatar" style="width:100%">
+                    <div class="cardContainer">
+                        <div itemid="dog">
+                            <h2>Henry</h2>
+                        <h3>Beagle</h3>
+                        </div>
+                    </div>
+            </div>
+            <div class="back" id="back2">
+                    <div class="cardContainer">
+                        <p>Age: 6 months</p>
+                        <p>Likes: Small sticks, soft pillows, and plushies</p>
+                        <p>Dislikes: Cold furniture</p>
+                        <p>Favorite Brand of Dog Food: Natural Balance</p>
+                        <p>Henry is a sensitive and loving pup. He enjoys snuggling with his favorite teddy bear on top of his soft blanket. Henry enjoys being on top of soft and warm furniture and will refuse to sit down on furniture that is too cold. </p>
+                        <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                    </div>
+            </div>
+        </div>
+
+        <div class="card" id="3">
+            <div class="front" id="front3">
+                <img src="assets/img/poodle.jpg" alt="Avatar" style="width:100%">
+                    <div class="cardContainer">
+                        <div itemid="dog">
+                            <h2>Teddy</h2>
+                            <h3>Poodle</h3>
+                        </div>
+                    </div>
+            </div>
+            <div class="back" id="back3">
+                    <div class="cardContainer">
+                        <p>Age: 9 months</p>
+                        <p>Likes: Stuffed animals, rubber balls, and long walks</p>
+                        <p>Dislikes: Dirt</p>
+                        <p>Favorite Brand of Dog Food: Taste of the Wild</p>
+                        <p>Teddy is a sweetheart who loves to take long walks. She often likes to take her stuffed animals along with her. She prefers to walk on city streets rather than dirt or grass and otherwise prefers to stay indoors.</p>
+
+                        <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                    </div>
+            </div>
+        </div>
+<!--		</div>-->
+
+<!--		<div class="row1">-->
+        <div class="card" id="4">
+                <div class="front" id="front4">
+                    <img src="assets/img/labrador.jpg" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="dog">
+                                <h2>Lisa</h2>
+                                <h3>Labrador</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back4">
+                        <div class="cardContainer">
+                            <p>Age: 5 years</p>
+                            <p>Likes: Fetch, sitting on laps, small spaces</p>
+                            <p>Dislikes: Small spaces</p>
+                            <p>Favorite Brand of Dog Food: Orijen</p>
+                            <p>Lisa is one of our older dogs, but she is still a pup at heart. She is super active and loves to play fetch. When not playing fetch, she likes to sit on people’s laps. Lisa also likes to cuddle up in small spaces, but gets upset and barks at the small spaces that are now too small for her to fit into. </p>
+
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+        </div>
+
+        <div class="card" id="5">
+                <div class="front" id="front5">
+                    <img src="assets/img/pug.jpg" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="dog">
+                                <h2>Fluffy</h2>
+                                <h3>Pug</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back5">
+                        <div class="cardContainer">
+                            <p>Age: 2 years</p>
+                            <p>Likes: Bacon, digging holes, and dirt</p>
+                            <p>Dislikes: His reflection</p>
+                            <p>Favorite Dog Food Brand: WholeHearted</p>
+                            <p>Fluffy is a small and energetic pup who loves to play outside and dig holes in the ground. Afterward, Fluffy also loves to take baths to get clean. He is often frightened by his own reflection and will bark at mirrors. </p>
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+        </div>
+
+        <div class="card" id="6">
+                <div class="front" id="front6">
+                    <img src="assets/img/shiba.jpg" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="dog">
+                                <h2>Samantha</h2>
+                                <h3>Shiba</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back6">
+                        <div class="cardContainer">
+                            <p>Age: 8 months</p>
+                            <p>Likes: Squirrels, birds, and cats</p>
+                            <p>Dislikes: Other dogs</p>
+                            <p>Favorite Brand of Dog Food: Friskies</p>
+                            <p>Samantha is not your typical pup. She is super friendly and curious. She loves going to the park and watching squirrels and birds. She also loves to play with cats. However, she is not particularly fond of other dogs and will often shy away from them.</p>
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+        </div>
+
+
+<!--		<div class="hideme">-->
+        <div class="card hideme" id="7">
+                <div class="front" id="front7">
+                    <img src="assets/img/persian.png" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="cat">
+                                <h2>Charley</h2>
+                                <h3>Persian Cat</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back7">
+                        <div class="cardContainer">
+                            <p>Age: 4 years</p>
+                            <p>Likes: High places, windows, and plants</p>
+                            <p>Dislikes: Small children</p>
+                            <p>Favorite Brand of Cat Food: Blue Buffalo</p>
+                            <p>Charley is a very calm and collected cat. She loves to perch onto high platforms and sleep. Charley also enjoys relaxing by the window and watching birds fly about. Although she is usually calm, she is easily startled by small children. </p>
+
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+        </div>
+
+        <div class="card hideme" id="8">
+                <div class="front" id="front8">
+                    <img src="assets/img/maccaw.jpg" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="bird">
+                                <h2>Cindy</h2>
+                                <h3>MaCaw Parrot</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back8">
+                        <div class="cardContainer">
+                            <p>Age: 3 years</p>
+                            <p>Likes: Sticks, small rocks, and the color red</p>
+                            <p>Dislikes: Loud noises</p>
+                            <p>Favorite Brand of Bird Food: Lyric</p>
+                            <p>Cindy is a fun and energetic bird who likes to collect things. She often likes to pick at small crevices in the ground to look for small sticks or rocks. She is particularly fond of rocks that are red.</p>
+
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+        </div>
+
+        <div class="card hideme" id="9">
+                <div class="front" id="front9">
+                    <img src="assets/img/munchkin.jpg" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="cat">
+                                <h2>Tiny</h2>
+                                <h3>Munchkin Cat</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back9">
+                        <div class="cardContainer">
+                            <p>Age: 1 year</p>
+                            <p>Likes: Fluffy furniture, large spaces, and fetch</p>
+                            <p>Dislikes: Bugs</p>
+                            <p>Favorite Brand of Cat Food: Meow Mix</p>
+                            <p>Tiny is small cat with a big personality. Although she is small, she is very energetic and can often be found either running around chasing things or rolling around on soft, fluffy furniture. She also enjoys going outside to play fetch.</p>
+
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+        </div>
+<!--		</div>-->
+
+<!--		<div class="hideme">-->
+        <div class="card hideme" id="10">
+                <div class="front" id="front10">
+                    <img src="assets/img/chocola.jpg" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="dog">
+                                <h2>Chocola</h2>
+                                <h3>Toy Poodle</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back10">
+                        <div class="cardContainer">
+                            <p>Age: 2 years</p>
+                            <p>Likes: People, metal bowls, and refrigerators</p>
+                            <p>Dislikes: Darkness</p>
+                            <p>Favorite Brand of Dog Food: Natural Balance</p>
+                            <p>Chocola is a super friendly dog who loves meeting new people. She loves going on walks and letting other people pet her. At home, she can usually be found snuggling by a refrigerator or other large household appliance. Chocola is also afraid of the dark and will whimper if it’s dark and nobody is holding her.</p>
+
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+        </div>
+
+        <div class="card hideme" id="11">
+                <div class="front" id="front11">
+                    <img src="assets/img/dambo.jpg" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="dog">
+                                <h2>Dambo</h2>
+                                <h3>Miniature Dachshund</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back11">
+                        <div class="cardContainer">
+                            <p>Age: 6 years</p>
+                            <p>Likes: Food, small objects, and putting things in her mouth</p>
+                            <p>Dislikes: Objects that don’t fit in her mouth</p>
+                            <p>Favorite Brand of Dog Food: Any Kind</p>
+                            <p>Dambo loves to eat! He is a very curious dog who likes to explore his environment and see what he can eat. If it can fit in his mouth, he’ll try to eat it. If it can’t fit in his mouth, he’ll still try to eat it.</p>
+
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+        </div>
+
+        <div class="card hideme" id="12">
+                <div class="front" id="front12">
+                    <img src="assets/img/mogu.jpg" alt="Avatar" style="width:100%">
+                        <div class="cardContainer">
+                            <div itemid="dog">
+                                <h2>Mogu</h2>
+                                <h3>Yorkshire Terrier</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="back" id="back12">
+                        <div class="cardContainer">
+                            <p>Age: 2 years</p>
+                            <p>Likes: Eating, sleeping, and car rides</p>
+                            <p>Dislikes: Walks</p>
+                            <p>Favorite Brand of Dog Food: Royal Canin</p>
+                            <p>Mogu is a very calm and obedient dog. He likes to sleep a lot and usually only wakes up to eat. Mogu also enjoys going outside, but he doesn’t like walking so he loves riding in cars and sticking his head out the window. </p>
+                            <a href="form_page.php" class="button-small adoptMe">Adopt Me</a>
+                        </div>
+                </div>
+    </div>
+    <!-- Your existing card elements go here -->
+</div>
+
+<div class="page">
+    <button class="btn1" onclick="backBtn()"><img src="./assets/icon/448-arrow.png"> prev</button>
+    <ul>
+        <li class="link active" value="1" onclick="activelink()">1</li>
+        <li class="link" value="2"onclick="activelink()" >2</li>
+        <li class="link" value="3" onclick="activelink()">3</li>
+    </ul>
+    <button class="btn2" onclick="nextBtn()">next <img src="./assets/icon/448-arrow.png"></button>
+</div>
+
+
+
+<script>
+    // Existing JavaScript code from your original code
+
+    let link = document.getElementsByClassName("link");
+	
+			let currentValue = 1;
+	
+			function activelink(){
+				for( l of link){
+					l.classList.remove("active");
+				}
+	
+				event.target.classList.add("active");
+				currentValue = event.target.value;
+			}
+	
+			function backBtn(){
+				if(currentValue > 1){
+					for(l of link){
+						l.classList.remove("active")
+					}
+					currentValue--;
+					link[currentValue-1].classList.add("active");
+				}
+			}
+	
+			function nextBtn(){
+				if(currentValue < 3){
+					for(l of link){
+						l.classList.remove("active")
+					}
+					currentValue++;
+					link[currentValue-1].classList.add("active");
+				}
+			}
+		</script>
+
+
+
+	</div>
+
+	<div style="padding-bottom: 20px">
+			<a class="button top">back to top</a>
+	</div>
+	<script language="javascript">
+		var $id = "#";
+		var $front = "#front";
+		var $back = "#back";
+			for(var i = 1; i < 13; i++ ){
+				$($id + i).flip({
+					front: $front + i,
+					back: $back + i,
+					trigger: 'hover',
+					reverse: true,
+					autoSize: true,
+					forceHeight: true
+				});
+			}
+		$(document).ready(function() {
+			$(window).scroll( function(){
+				$('.hideme').each( function(i){
+					var bottom_of_object = ($(this).offset().top + $(this).outerHeight())/1.4;
+					var bottom_of_window = $(window).scrollTop() + $(window).height();
+					if( bottom_of_window > bottom_of_object ){
+						$(this).animate({'opacity':'1'},100);
+					}
+				});
+			});
+		});
+		function myFunction() {
+			var x = document.getElementById("nav");
+			if (x.className === "navbar") {
+				x.className += " responsive";
+			} else {
+				x.className = "navbar";
+			}
+		}
+		$(".button").click(function() {
+    		$('html,body').animate({
+       		 scrollTop: $(".row1").offset().top},
+        	'slow');
+		});
+		$(".top").click(function() {
+    		$('html,body').animate({
+       		 scrollTop: $(".navbar").offset().top},
+        	'slow');
+		});
+
+		function searchTabs() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var cards = document.getElementsByClassName("card");
+            var selectedFilter = document.getElementById("itemFilter").value;
+        
+            for (var i = 0; i < cards.length; i++) {
+                var card = cards[i];
+                var cardContainer = card.getElementsByClassName("cardContainer")[0];
+                var h2Name = cardContainer.getElementsByTagName("h2")[0];
+                var h3Name = cardContainer.getElementsByTagName("h3")[0];
+                var category = card.querySelector("[itemid]").getAttribute("itemid");
+        
+                if (
+                    (selectedFilter === "all" || category === selectedFilter) &&
+                    (h2Name.innerText.toUpperCase().indexOf(filter) > -1 ||
+                        h3Name.innerText.toUpperCase().indexOf(filter) > -1 ||
+                        category.toUpperCase().indexOf(filter) > -1)
+                ) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            }
+        }
+        
+        
+        function filterByItemID() {
+            var filter = document.getElementById("itemFilter").value;
+            var cards = document.getElementsByClassName("card");
+        
+            for (var i = 0; i < cards.length; i++) {
+                var card = cards[i];
+                var category = card.querySelector("[itemid]").getAttribute("itemid");
+        
+                if (filter === "all" || category === filter) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            }
+        }
+        
+          
+		
+		
+		
+
+    function myFunction() {
+        var x = document.getElementById("nav");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+</script>
+<footer>
+    <div class="shortcut">
+         <p><a class="item" href="index.html">Home</a></p>
+        <p><a class="item" href="about.html">About</a></p>
+        <p><a class="item" href="Policy.html">Policy</a></p>
+        <p><a class="item" href="Success.html">Stories</a></p>
+        <p><a class="item" href="animalList.html">List of Dogs</a></p>
+        <p><a class="item" href="form_page.php">Adoption Form</a></p>
+        <p><a class="item" href="Resources.html">Resources</a></p>
+      </div>
+</footer>
+
+</body>
+</html>

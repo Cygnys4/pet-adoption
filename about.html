@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kartik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CuddleCritter</title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon"/>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Poppins:400,500i,900i|VT323&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    </style>
+</head>
+
+<body>
+<header>
+    <nav class="navbar" id="nav">
+        <a class="item siteName" href="index.html">CuddleCritter</a>
+        <a class="item" id="active" href="about.html">About</a>
+        <a class="item" href="animalList.html">Find a Pet</a>
+        <a class="item" href="Policy.html">Policy</a>
+        <a class="item" href="Success.html">Stories</a>
+		<a class="item" href="Resources.html">Resources</a>
+        <a class="item icon" href="javascript:void(0);" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+</header>
+
+<section class="container brown" id="about">
+    <div class="row">
+        <div class="column-two">
+            <img src="assets/img/dog-adrienghenassia.gif" alt="Dog animation" />
+            <!-- image link: https://dribbble.com/shots/6783831-Doggy -->
+        </div>
+        <div class="column-two">
+            <div class="wrapper">
+                <h1>CuddleCritter</h1>
+                <p class="description">We are a nonprofit organization advocating for a voice for chained, penned, abused and neglected pets.</p>
+                <p>We rescue pets of all breeds, ages, and conditions. We provide the love, medical care, socialization, and training they need to be happy, healthy and loving companions.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="container white" id="mission">
+    <h2>Our Mission</h2>
+    <div class="row">
+        <div class="column-three">
+            <div class="wrapper-icon">
+                <img src="assets/icon/paw1.png" alt="Policy icon" />
+                <h3>Public Awareness</h3>
+                <p>Increase public awareness of the availability of high-quality adoptable pets</p>
+            </div>
+        </div>
+        <div class="column-three">
+            <div class="wrapper-icon">
+                <img src="assets/icon/paw2.png" alt="Finding icon" />
+                <h3>Effective Adoption</h3>
+                <p>Increase the overall effectiveness of pet adoption programs </p>
+            </div>
+        </div>
+        <div class="column-three">
+            <div class="wrapper-icon">
+                <img src="assets/icon/paw3.png" alt="Story icon" />
+                <h3>Happy Family</h3>
+                <p>Elevate the status of pets to that of family members</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="banner third"></section>
+
+
+<footer>
+    <div class="shortcut">
+        <p><a class="item" href="index.html">Home</a></p>
+        <p><a class="item" href="about.html">About</a></p>
+        <p><a class="item" href="Policy.html">Policy</a></p>
+        <p><a class="item" href="Success.html">Stories</a></p>
+        <p><a class="item" href="animalList.html">List of Dogs</a></p>
+        <p><a class="item" href="form_page.php">Adoption Form</a></p>
+		<p><a class="item" href="Resources.html">Resources</a></p>
+
+    </div>
+</footer>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("nav");
+        if (x.className === "navbar") {
+        x.className += " responsive";
+        } else {
+        x.className = "navbar";
+        }
+    }
+</script>
+
+</body>
+</html>
