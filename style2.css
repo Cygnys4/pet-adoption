@@ -129,13 +129,13 @@ button[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* a {
+a {
     display: block;
     margin-top: 10px;
-} */
+}
 
 /* Button Styles */
-/* .button {
+.button {
     background-color: #f6ad7b;
     border: none;
     color: #ffffff;
@@ -155,7 +155,7 @@ button[type="submit"]:hover {
 
 .button:hover {
     background-color: #ed6969;
-} */
+}
 
 /* Footer Styling */
 footer {
@@ -185,4 +185,56 @@ footer a:hover {
     footer {
         flex-wrap: wrap;
     }
+}
+
+/* Miscellaneous Styles */
+.cover {
+    height: 100%;
+    padding-top: 100px;
+}
+
+.white {
+    background-color: #f2eee5;
+    color: rgb(14, 10, 8);
+}
+
+.orange {
+    background-color: #f6ad7b;
+    color: #fff;
+}
+
+.salmon {
+    background-color: #FAE0B7;
+}
+
+.brown {
+    background-color: #CAA184;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column-two {
+    flex: 0 0 44%;
+    text-align: left;
+    padding: 2%;
+}
+
+.column-three {
+    flex: 0 0 33.333%;
+}
+
+.column-four {
+    flex: 0 0 23%;
+    margin: 1%;
+}
+
+.column-two img {
+    width: 120%;
+}
+
+.center {
+    text-align: center;
 }

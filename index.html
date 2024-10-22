@@ -1,113 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kartik">
     <title>CuddleCritter</title>
+    <link rel="stylesheet" href="./style4.css">
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon"/>
-    <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Poppins:400,500i,900i|VT323&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
-<header>
-    <nav class="navbar" id="nav">
-        <a class="item siteName" href="index.html">CuddleCritter</a>
-        <a class="item" href="about.html">About</a>
-        <a class="item" href="animalList.html">Find a Dog</a>
-        <a class="item" href="Policy.html">Policy</a>
-        <a class="item" href="Success.html">Stories</a>
-		<a class="item" href="Resources.html">Resources</a>
-        <a class="item icon" href="javascript:void(0);" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </nav>
-</header>
+    <header>
+        <nav class="navbar" id="nav">
+            <a class="item siteName" href="index.html">CuddleCritter</a>
+            <a class="item" href="about.html">About</a>
+            <a class="item" href="animalList.html">Find a Dog</a>
+            <a class="item" href="Policy.html">Policy</a>
+            <a class="item" href="Success.html">Stories</a>
+            <a class="item" href="Resources.html">Resources</a>
+            <a class="item icon" href="javascript:void(0);" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
 
-<section class="container cover salmon">
-    <div class="row">
-        <div class="column-two">
-            <div class="wrapper">
-                <h1 class="cover-heading">Dogs Find Their People</h1>
-                <p class="description">Thousands of adoptable dogs are looking for people. Adopting, fostering and sponsoring can save lives.</p>
-                <br><a href="animalList.html" class="button left">Adopt Now</a>
-            </div>
+<div class="container">
+  <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
+    <label for="name">Name : </label>
+    <input type="text" name="name" id="name" required> <br>
+    <label for="description">Description : </label>
+    <input type="text" name="description" id="description" required> <br>
+    <label for="category">Category : </label>
+    <input type="text" name="category" id="category" required> <br>
+    <label for="breed">Breed : </label>
+    <input type="text" name="breed" id="breed" required> <br>
+    <label for="image">Image : </label>
+    <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png"> <br> <br>
+    <button class="button" type="submit" name="submit">Submit</button>
+    <a href="./data.php">Data</a>
+  </form>
 
-            <a  style="color: #f6ad7b;" href="http://localhost/pet/uploadimagefile/">Help pet</a>
-        </div>
-        <div class="column-two">
-            <img src="assets/img/puppy_fixed.gif" alt="Dog animation" />
-        </div>
-    </div>
-</section>
-
-<section class="banner first"></section>
-
-<section class="container white">
-        <div class="wrapper">
-            <h2>CuddleCritter</h2>
-            <p class="description">We rescue chained, penned, abused, and neglected dogs</p>
-            <br><a href="about.html" class="button">More About Us</a>
-        </div>
-
-</section>
-
-<section class="banner second"></section>
-
-<section class="container white" id="whatToDo">
-    <div class="row">
-        <div class="column-three">
-            <div class="wrapper-icon">
-                <img src="assets/icon/policy.png" alt="Policy icon" />
-                <h3>How to Adopt</h3>
-                <p>Learn about our adoption policies!</p>
-                <a href="Policy.html" class="button-small">See Policy</a>
-            </div>
-        </div>
-        <div class="column-three">
-            <div class="wrapper-icon">
-                <img src="assets/icon/find.png" alt="Finding icon" />
-                <h3>Finding a Dog</h3>
-                <p>See dogs available for adoption near you!</p>
-				<a href="animalList.html" class="button-small">Meet Dogs in Need</a>
-            </div>
-        </div>
-        <div class="column-three">
-            <div class="wrapper-icon">
-                <img src="assets/icon/story.png" alt="Story icon" />
-                <h3>Successful Stories</h3>
-                <p>Check out some of our success stories!</p>
-		        <a href="Policy.html" class="button-small">See Stories</a>
-            </div>
-        </div>
-    </div>
-</section>
+  <section class="dog-gif">
+    <img id="dinner" src="./assets/dinner_time_dog.gif" alt="Dog GIF">
+    <h1>Save an animal</h1>
+  </section>
+</div>
 
 <footer>
-    <div class="shortcut">
-        <p><a class="item" href="index.html">Home</a></p>
-        <p><a class="item" href="about.html">About</a></p>
-        <p><a class="item" href="Policy.html">Policy</a></p>
-        <p><a class="item" href="Success.html">Stories</a></p>
-        <p><a class="item" href="animalList.html">List of Dogs</a></p>
-        <p><a class="item" href="form_page.php">Adoption Form</a></p>
-		<p><a class="item" href="Resources.html">Resources</a></p>
-
-    </div>
+  <h2>Adopting a pet means saving a life, gaining a loyal friend, and filling your home with unconditional love.</h2>
 </footer>
-
 <script>
     function myFunction() {
         var x = document.getElementById("nav");
         if (x.className === "navbar") {
-        x.className += " responsive";
+            x.className += " responsive";
         } else {
-        x.className = "navbar";
+            x.className = "navbar";
         }
     }
 </script>
-
 </body>
+</html>
